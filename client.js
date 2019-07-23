@@ -33,6 +33,9 @@ const employees = [
 
 
 //take in one employee and calculate based on rating
+let bonusArray = [];
+
+
 function bonusCalc(employee) {
   let bonus = 0;
   for (i = 0; i < employee.length; i++) {
@@ -41,6 +44,7 @@ function bonusCalc(employee) {
       console.log(employee[i].name, bonus);
     } else if (employee[i].reviewRating == 4) {
       bonus = employee[i].annualSalary * .06;
+      employee[i].push(test:bonus); 
       console.log(employee[i].name, bonus);
     } else if (employee[i].reviewRating == 5) {
       bonus = employee[i].annualSalary * .10;
@@ -49,7 +53,23 @@ function bonusCalc(employee) {
       console.log(employee[i].name, 'no bonus');
     }
   }
+  for (i = 0; i < employee.length; i++) {
+    if (employee[i].employeeNumber.length == 4) {
+      bonus = bonus + (employee[i].annualSalary * .05);
+      console.log(employee[i].name, bonus);
+    } 
+  
+  } 
 }
+
+function employeePush (name, employeeNumber, annualSalary, reviewRating, bonus) {
+    this.name = name;
+    this.employeeNumber = employeeNumber;
+    this.annualSalary = annualSalary;
+    this.reviewRating = reviewRating;
+    this.bonus = bonus;
+}
+
 bonusCalc(employees);
 //check for employee number length (4 gets 15% more)
 
