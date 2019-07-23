@@ -31,6 +31,32 @@ const employees = [
   }
 ];
 
+
+//take in one employee and calculate based on rating
+function bonusCalc(employee) {
+  let bonus = 0;
+  for (i = 0; i < employee.length; i++) {
+    if (employee[i].reviewRating == 3) {
+      bonus = employee[i].annualSalary * .04;
+      console.log(employee[i].name, bonus);
+    } else if (employee[i].reviewRating == 4) {
+      bonus = employee[i].annualSalary * .06;
+      console.log(employee[i].name, bonus);
+    } else if (employee[i].reviewRating == 5) {
+      bonus = employee[i].annualSalary * .10;
+      console.log(employee[i].name, bonus);
+    } else {
+      console.log(employee[i].name, 'no bonus');
+    }
+  }
+}
+bonusCalc(employees);
+//check for employee number length (4 gets 15% more)
+
+//check if income is greater than 65K, lose 1% if great
+
+//check if bonus percent is below 0% or above 13%
+
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
